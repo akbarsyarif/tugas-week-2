@@ -26,7 +26,7 @@ async function checkStrength(input) {
 // checkStrength("123456Aa");
 
 //
-// b. Cek Expiry date
+// b. Cek Schedule
 const findSchedule = (input, callback) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
