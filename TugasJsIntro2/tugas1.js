@@ -60,7 +60,7 @@
 //      index: titik dimana kita mulai merubah array
 //      howMany: sebuah integer yg menandakan berapa banyak elemen lama yang akan dihapus, jika howMany dikosongkan maka tidak ada elemen yang dihapus
 //      elemen1, ..., elemenN: elemen yang akan ditambhakan ke dalam array, jika elemen kosong maka splice hanya akan menghapus elemen yang ada di dalam array
-//      splice bersifat non-mutasi
+//      splice bersifat mutasi
 // const cobaArray = ["mobil", "motor", "kereta"];
 // const kata = "pesawat";
 // console.log(`before: ${cobaArray}`);
@@ -125,7 +125,7 @@
 // const result3 = Math.sqrt(valueC);
 // console.log(`After: ${valueA} ${valueB} ${valueC}`);
 // console.log(`Output: ${result1} ${result2} ${result3}`);
-//
+// //
 // 10. test (RegExp.test)
 //      digunakan untuk mencari string yang ada di dalam teks yang sesuai dengan regexp
 //      return jika ditemukan maka akan mengembalikan nilai true
