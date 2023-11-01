@@ -61,23 +61,4 @@ async function checkSchedule(input, callback) {
     console.log(error);
   }
 }
-checkSchedule("week 2", findWeek);
-// console.log(findWeek("week 2"));
-
-// const schedule = { week1: "Monday and Tuesday", week2: "Monday and Wednesday", week3: "Tuesday and Friday" };
-// let cari = "week4";
-// let output = Object.keys(schedule).filter((key) => key.includes(cari));
-// let hasil = "";
-// Object.keys(schedule).forEach((element) => {
-//   if (element.includes(cari)) {
-//     hasil += `${element} : ${schedule[element]}`;
-//   }
-// });
-// let hasil1 = Object.keys(schedule).forEach((element) => element.includes(cari));
-// let a = true;
-// let b = false;
-// let c = undefined;
-// // console.log(a === c);
-// // console.log(a === b);
-// // console.log(cari === schedule.week1);
-// console.log(hasil);
+checkSchedule("week 4", findWeek);

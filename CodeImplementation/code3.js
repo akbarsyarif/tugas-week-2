@@ -1,48 +1,60 @@
 const fazzFood = (harga, voucher, jarak, pajak) => {
   const voucherA = "FAZZFOOD50";
   const voucherB = "DITRAKTIR60";
-  let diskon;
-  let ongkir;
+
   const baseDelivery = 5000;
   const extraDelivery = 3000;
-  let tax;
+
   let subTotal;
 
-  if (voucher === voucherA && harga >= 50000) {
-    diskon = harga * 0.5;
-    if (diskon > 50000) {
-      diskon = 50000;
+  const hitungDiskon = (harga) => {
+    let diskon;
+    if (voucher === voucherA && harga >= 50000) {
+      diskon = harga * 0.5;
+      if (diskon > 50000) {
+        diskon = 50000;
+        return diskon;
+      }
+      return diskon;
     }
-  } else if (voucher === voucherB && harga >= 25000) {
-    diskon = harga * 0.6;
-    if (diskon > 30000) {
-      diskon = 30000;
+    if (voucher === voucherB && harga >= 25000) {
+      diskon = harga * 0.6;
+      if (diskon > 30000) {
+        diskon = 30000;
+        return diskon;
+      }
+      return diskon;
     }
-  } else {
     diskon = 0;
-  }
-  //   console.log(diskon);
+    return diskon;
+  };
 
-  if (jarak > 2) {
-    ongkir = baseDelivery + (jarak - 2) * extraDelivery;
-  } else {
+  const hitungOngkir = (jarak) => {
+    let ongkir;
+    if (jarak > 2) {
+      ongkir = baseDelivery + (jarak - 2) * extraDelivery;
+      return ongkir;
+    }
     ongkir = baseDelivery;
-  }
-  //   console.log(ongkir);
+    return ongkir;
+  };
 
-  if (pajak) {
-    tax = harga * 0.05;
-  } else {
+  const hitungPajak = (pajak) => {
+    let tax;
+    if (pajak) {
+      tax = harga * 0.05;
+      return tax;
+    }
     tax = 0;
-  }
-  //   console.log(tax);
+    return tax;
+  };
 
-  subTotal = harga - diskon + ongkir + tax;
+  subTotal = harga - hitungDiskon(harga) + hitungOngkir(jarak) + hitungPajak(pajak);
 
   return `Harga : ${harga}
-Potongan : ${diskon}
-Biaya Antar : ${ongkir}
-Pajak : ${tax}
+Potongan : ${hitungDiskon(harga)}
+Biaya Antar : ${hitungOngkir(jarak)}
+Pajak : ${hitungPajak(pajak)}
 SubTotal : ${subTotal}`;
 };
 console.log(fazzFood(75000, "FAZZFOOD50", 5, true));
